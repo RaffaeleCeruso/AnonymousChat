@@ -45,7 +45,7 @@ public class Room implements Serializable {
     }
 
     public PeerAddress getForwarderPeer(PeerAddress sourcePeer, PeerAddress destinationPeer) {
-        Random r = new Random();
+        Random r = new Random(System.currentTimeMillis());
         Set<PeerAddress> s = new HashSet<PeerAddress>();
         s.addAll(peers);
         PeerAddress[] peerToArray =  s.toArray(new PeerAddress[s.size()]);
